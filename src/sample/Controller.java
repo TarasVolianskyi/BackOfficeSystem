@@ -21,13 +21,23 @@ public class Controller {
 
     public void doProdUpdt(ActionEvent actionEvent) {
         String name = txtFldProdName.getText();
-        int price = Integer.parseInt(txtFldProdPrice.getText());
+        int price;
+        if (txtFldProdPrice.getText() == "") {
+            price = 0;
+        } else {
+            price = Integer.parseInt(txtFldProdDelivId.getText());
+        }
         String category = txtFldProdCateg.getText();
-        int delivId = Integer.parseInt(txtFldProdDelivId.getText());
+        int delivId;
+        if (txtFldProdDelivId.getText() == "") {
+            delivId = 0;
+        } else {
+            delivId = Integer.parseInt(txtFldProdDelivId.getText());
+        }
         String charact = txtFldProdCharact.getText();
         int id = Integer.parseInt(txtFldProdUpdt.getText());
-        prodHlp.update(name, price, category,delivId,charact, id );
-            }
+        prodHlp.update(name, price, category, delivId, charact, id);
+    }
 
     public void doProdShowAll(ActionEvent actionEvent) {
     }
@@ -43,7 +53,7 @@ public class Controller {
     public void doProdDelPart(ActionEvent actionEvent) {
         int from = Integer.parseInt(txtFldProdDelFrom.getText());
         int to = Integer.parseInt(txtFldProdDelTo.getText());
-        prodHlp.deleteWithLimit(from,to);
+        prodHlp.deleteWithLimit(from, to);
     }
 
     public void doProdDelAll(ActionEvent actionEvent) {

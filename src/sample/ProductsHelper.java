@@ -59,25 +59,76 @@ public class ProductsHelper {
     }
 
     public void update(String name, int price, String categor, int deliv_id, String charact, int id) {
-        String qwery = "update " + TABLE_NAME + " set Pr_name=?, Pr_price=?, Pr_catgr=?, Deliv_id=?, Pr_charact=? where Pr_id=?";
+        //String qwery = "update " + TABLE_NAME + " set Pr_name=?, Pr_price=?, Pr_catgr=?, Deliv_id=?, Pr_charact=? where Pr_id=?";
 
-
-
-      //  String qwery = "update " + TABLE_NAME + " set Pr_name=? where Pr_id=?";
-        try {
-            PreparedStatement preparedStatement = openPreparedConnection(qwery);
-            preparedStatement.setString(1, name);
-            preparedStatement.setInt(2, price);
-            preparedStatement.setString(3, categor);
-            preparedStatement.setInt(4, deliv_id);
-            preparedStatement.setString(5, charact);
-            preparedStatement.setInt(6,id);
-            preparedStatement.execute();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if (name != "") {
+            String qweryName = "update " + TABLE_NAME + " set Pr_name=? where Pr_id=?";
+            try {
+                PreparedStatement preparedStatement = openPreparedConnection(qweryName);
+                preparedStatement.setString(1, name);
+                preparedStatement.setInt(2, id);
+                preparedStatement.execute();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+        if (price != 0) {
+            String qweryPrice = "update " + TABLE_NAME + " set Pr_price=? where Pr_id=?";
+            try {
+                PreparedStatement preparedStatement = openPreparedConnection(qweryPrice);
+                preparedStatement.setInt(1, price);
+                preparedStatement.setInt(2, id);
+                preparedStatement.execute();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (categor != "") {
+            String qweryCategor = "update " + TABLE_NAME + " set Pr_catgr=? where Pr_id=?";
+            try {
+                PreparedStatement preparedStatement = openPreparedConnection(qweryCategor);
+                preparedStatement.setString(1, categor);
+                preparedStatement.setInt(2, id);
+                preparedStatement.execute();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (deliv_id != 0) {
+            String qweryDeilvId = "update " + TABLE_NAME + " set Deliv_id=? where Pr_id=?";
+            try {
+                PreparedStatement preparedStatement = openPreparedConnection(qweryDeilvId);
+                preparedStatement.setInt(1, deliv_id);
+                preparedStatement.setInt(2, id);
+                preparedStatement.execute();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (charact != "") {
+            String qweryCategor = "update " + TABLE_NAME + " set Pr_charact=? where Pr_id=?";
+            try {
+                PreparedStatement preparedStatement = openPreparedConnection(qweryCategor);
+                preparedStatement.setString(1, charact);
+                preparedStatement.setInt(2, id);
+                preparedStatement.execute();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
     }
 
   /*  public void printAll() {

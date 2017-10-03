@@ -73,6 +73,8 @@ public class ProductsHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            int a =  1;
         }
         if (price != 0) {
             String qweryPrice = "update " + TABLE_NAME + " set Pr_price=? where Pr_id=?";
@@ -86,6 +88,8 @@ public class ProductsHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            int a =  1;
         }
         if (categor != "") {
             String qweryCategor = "update " + TABLE_NAME + " set Pr_catgr=? where Pr_id=?";
@@ -99,6 +103,8 @@ public class ProductsHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            int a =  1;
         }
         if (deliv_id != 0) {
             String qweryDeilvId = "update " + TABLE_NAME + " set Deliv_id=? where Pr_id=?";
@@ -112,6 +118,8 @@ public class ProductsHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            int a =  1;
         }
         if (charact != "") {
             String qweryCategor = "update " + TABLE_NAME + " set Pr_charact=? where Pr_id=?";
@@ -125,6 +133,8 @@ public class ProductsHelper {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else {
+            int a =  1;
         }
 
 

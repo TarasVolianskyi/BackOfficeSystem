@@ -25,7 +25,7 @@ public class Controller {
         if (txtFldProdPrice.getText() == "") {
             price = 0;
         } else {
-            price = Integer.parseInt(txtFldProdDelivId.getText());
+            price = Integer.parseInt(txtFldProdPrice.getText());
         }
         String category = txtFldProdCateg.getText();
         int delivId;
